@@ -35,6 +35,6 @@ paths:
               schema: 
                 type: array
                 items: 
-                  type: strin
+                  type: string
 ```
 
