@@ -9,18 +9,7 @@ OpenAPI Specification (formerly Swagger Specification) is an API description for
 
 API specifications can be written in YAML or JSON. The complete OpenAPI Specification can be found on GitHub [here](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md).
 
-## Why Use OpenAPI?
-
-Once written, an OpenAPI specification and Swagger tools can drive your API development further in various ways:
-* Design-first users: use [Swagger Codegen](https://github.com/swagger-api/swagger-codegen) to **generate a server stub** for your API. The only thing left is to implement the server logic - and your API is ready to go live!
-* Use [Swagger Codegen](https://github.com/swagger-api/swagger-codegen) to **generate client libraries** for your API in over 40 languages.
-* Use [Swagger UI](https://github.com/swagger-api/swagger-ui) to generate **interactive API documentation** that lets your users try out the API calls directly in the browser.
-* Use the spec to connect API-related tools to your API. For example, import the spec to [SoapUI](https://soapui.org/) to create automated tests for your API.
-* And more! Check out the [open-source](https://swagger.io/tools/open-source/open-source-integrations/) and [commercial tools](https://swagger.io/commercial-tools/) that integrate with Swagger.
-
 ## Basic Structure
-
-I use YAML examples below, but you can use JSON too.
 
 ```YAML
 openapi: 3.0.0
@@ -46,81 +35,6 @@ paths:
               schema: 
                 type: array
                 items: 
-                  type: string
-```
-All keywords names are **case-sensitive**
-
-### Metadata
-Every API definition must include the version of the OpenAPI Specification that this definition is based on:
-```YAML
-openapi: 3.0.0
-```
-The `info` section contains API information: `title`, `description` (optional), `version`:
-```YAML
-info:
-  title: Sample API
-  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
-  version: 0.1.9
-```
-
-## Path
-```YAML
-get:
-  description: Returns pets based on ID
-  summary: Find pets by ID
-  operationId: getPetsById
-  responses:
-    '200':
-      description: pet response
-      content:
-        '*/*' :
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Pet'
-    default:
-      description: error payload
-      content:
-        'text/html':
-          schema:
-            $ref: '#/components/schemas/ErrorModel'
-parameters:
-- name: id
-  in: path
-  description: ID of pet to use
-  required: true
-  schema:
-    type: array
-    items:
-      type: string  
-  style: simple
-```
-
-## Component
-
-```YAML
-components:
-  schemas:
-    ErrorModel:
-      type: object
-      required:
-      - message
-      - code
-      properties:
-        message:
-          type: string
-        code:
-          type: integer
-          minimum: 100
-          maximum: 600
-    ExtendedErrorModel:
-      allOf:
-      - $ref: '#/components/schemas/ErrorModel'
-      - type: object
-        required:
-        - rootCause
-        properties:
-          rootCause:
-            type: string
+                  type: strin
 ```
 
