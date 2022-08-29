@@ -9,7 +9,7 @@ OpenAPI Specification (formerly Swagger Specification) is an API description for
 
 API specifications can be written in YAML or JSON. The complete OpenAPI Specification can be found on GitHub [here](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.3.md).
 
-## Basic Structure
+## Snippet
 
 ```YAML
 openapi: 3.0.0
